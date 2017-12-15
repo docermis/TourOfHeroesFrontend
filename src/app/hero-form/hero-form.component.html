@@ -1,0 +1,29 @@
+<form name="uploadForm" method="post" enctype="multipart/form-data" action="api/upload">
+  <div>
+    <label>
+      Hero Name:
+      <input type="text" class="form-control" id="name" required
+             [(ngModel)]="hero.name" name="name"
+             #name="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+  <div>
+    <label>
+      Hero Power:
+      <input type="text" class="form-control" id="power" required
+             [(ngModel)]="hero.power" name="power" 
+             #power="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+  <div>
+    <label>
+      Hero Identity:
+      <input type="text" class="form-control" id="identity"
+             [(ngModel)]="hero.identity" name="identity"
+             #identity="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+
+
+  <button (click)="submit()">Upload</button>
+</form>

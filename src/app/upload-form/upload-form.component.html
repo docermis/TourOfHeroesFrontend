@@ -1,0 +1,32 @@
+<form name="uploadForm" method="post" enctype="multipart/form-data" action="api/upload">
+  <div>
+    <label>
+      File Title:
+      <input type="text" class="form-control" id="title" required
+             [(ngModel)]="fileInfo.title" name="title" 
+             #title="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+  <div>
+    <label>
+      Uploader Name:
+      <input type="text" class="form-control" id="uploaderName" required
+             [(ngModel)]="fileInfo.uploaderName" name="uploaderName" 
+             #uploaderName="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+  <div>
+    <label>
+      Description:
+      <input type="text" class="form-control" id="description"
+             [(ngModel)]="fileInfo.description" name="description"
+             #description="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+    </label>
+  </div>
+  <div>
+    <input #fileInput type="file" />
+  </div>
+
+
+  <button (click)="upload()">Upload</button>
+</form>
