@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroFormComponent } from "./hero-form/hero-form.component";
 import { UploadFormComponent } from './upload-form/upload-form.component';
+import { FilesComponent } from './files/files.component';
 
 
 const routes: Routes = [

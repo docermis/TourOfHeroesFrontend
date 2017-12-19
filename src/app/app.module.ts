@@ -10,14 +10,16 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { UploadFormComponent } from './upload-form/upload-form.component';
+import { FilesComponent } from './files/files.component';
 
 
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 
 import { AppRoutingModule } from './/app-routing.module';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { UploadFormComponent } from './upload-form/upload-form.component';
+
 
 
 
@@ -30,7 +32,8 @@ import { UploadFormComponent } from './upload-form/upload-form.component';
         DashboardComponent,
         HeroFormComponent,
         HeroSearchComponent,
-        UploadFormComponent
+        UploadFormComponent,
+        FilesComponent
     ],
     imports: [
         BrowserModule,
