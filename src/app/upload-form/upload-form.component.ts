@@ -14,6 +14,7 @@ import { MessageService } from "../message.service";
 export class UploadFormComponent {
 
   @ViewChild( "fileInput" ) fileInput;
+  @ViewChild( "uploadForm" ) uploadForm;
 
   fileInfo = new FileInfo( "", "Bob's File", "Bob", "This is a file uploaded by Bob." );
   success = false;
@@ -36,6 +37,8 @@ export class UploadFormComponent {
             this.heroService.updateXmlFile( this.fileInfo )
               .subscribe( result => {
                 this.messageService.add( `Hero Service: Successfully created and filled "${fileToUpload.name}" 's xml file.` );
+                this.uploadForm.reset();
+                this.fileInput.nativeElement.value = "";
               },
               error => {
                 this.messageService.add( `Hero Service: FAILED to update "${fileToUpload.name}" 's xml file.` );
@@ -45,8 +48,9 @@ export class UploadFormComponent {
         error => {
           this.messageService.add( 'Hero Service: FAILED to upload file.' )
         } );
-      
+
     }
+    
   }
 
 }
