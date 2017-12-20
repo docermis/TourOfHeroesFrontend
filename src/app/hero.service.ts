@@ -53,11 +53,15 @@ export class HeroService {
     var input = new FormData();
     input.append( "file", fileToUpload );
 
-    return this.http.post<FileInfo>( 'http://localhost:60525/api/search/', input );
+    return this.http.post<FileInfo>( 'http://localhost:60525/api/file/', input );
   }
 
   updateXmlFile( fileInfo: FileInfo ): Observable<any> {
-    return this.http.post<any>( 'http://localhost:60525/api/search/form/', fileInfo );
+    return this.http.post<any>( 'http://localhost:60525/api/search/', fileInfo );
+  }
+
+  searchFiles( searchTerm: string ): Observable<string[]> {
+    return this.http.get<string[]>( 'http://localhost:60525/api/file/' + searchTerm );
   }
 
 

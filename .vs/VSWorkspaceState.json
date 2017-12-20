@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\dashboard",
+    "\\src\\app\\files",
     "\\src\\app\\hero-detail",
     "\\src\\app\\hero-form",
     "\\src\\app\\hero-search",
     "\\src\\app\\heroes",
-    "\\src\\app\\messages",
-    "\\src\\app\\upload-form"
+    "\\src\\app\\messages"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\app\\files\\files.component.css",
   "PreviewInSolutionExplorer": false
 }

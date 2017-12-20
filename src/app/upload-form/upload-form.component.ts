@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 
 import { FileInfo } from '../file-info';
 
-import { HeroService } from "../hero.service";
-import { MessageService } from "../message.service";
+import { MessageService } from '../message.service';
+import { HeroService } from '../hero.service';
 
 
 @Component( {

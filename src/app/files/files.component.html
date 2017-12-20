@@ -1,8 +1,15 @@
-
-<div>
+<br />
+<div class="container">
   <label>Search</label>
-  <input type="search" />
+  <input type="search" class="form-control" id="search" required maxlength="80"
+         [(ngModel)]="searchTerm" name="search" />
+  <button class="btn btn-primary" (click)="searchFiles()">Search</button>
 </div>
 <div>
   <label>Search Results</label>
+  <ul class="list-group">
+    <li *ngFor="let file of fileNamesList" class="list-group-item">
+      {{file}}
+    </li>
+  </ul>
 </div>
