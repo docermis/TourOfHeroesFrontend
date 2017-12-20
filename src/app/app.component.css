@@ -1,3 +1,17 @@
+.footer {
+  position: fixed;
+  color: #369;
+  background-color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  border-top: solid;
+  border-top-color: #369;
+  padding-top: 0.8em;
+  padding-left: 2em;
+}
+
 h1 {
   font-size: 250%;
   color: #369;

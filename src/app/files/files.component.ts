@@ -29,7 +29,12 @@ export class FilesComponent implements OnInit {
     this.heroService.searchFiles( this.searchTerm )
       .subscribe( result => {
         this.fileNamesList = result;
-        this.messageService.add( `Hero Service: Found files with search term: ${this.searchTerm}` );
+        if ( this.fileNamesList.length ) {
+          this.messageService.add( `Hero Service: Found files with search term: ${this.searchTerm}` );
+        }
+        else {
+          this.messageService.add( `Hero Service: Did NOT find files with search term: ${this.searchTerm}` );
+        }
       },
       error => {
         this.messageService.add( 'Hero Service: FAILED to find files.' );
