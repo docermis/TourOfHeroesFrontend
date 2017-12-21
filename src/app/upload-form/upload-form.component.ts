@@ -16,7 +16,7 @@ export class UploadFormComponent {
   @ViewChild( "fileInput" ) fileInput;
   @ViewChild( "uploadForm" ) uploadForm;
 
-  fileInfo = new FileInfo( "", "Bob's File", "Bob", "This is a file uploaded by Bob." );
+  fileInfo = new FileInfo( "", "", "Bob's File", "Bob the Builder", "This is a file uploaded by Bob." );
   success = false;
 
   constructor(
@@ -33,6 +33,7 @@ export class UploadFormComponent {
           this.messageService.add( `Hero Service: Successfully uploaded "${fileToUpload.name}".` );
           this.success = true;
           this.fileInfo.xmlFileName = result.xmlFileName;
+          this.fileInfo.originalFileName = fileToUpload.name;
           if ( this.success ) {
             this.heroService.updateXmlFile( this.fileInfo )
               .subscribe( result => {

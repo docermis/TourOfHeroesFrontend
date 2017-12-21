@@ -7,6 +7,8 @@ import { catchError } from 'rxjs/operators';
 
 import { Hero } from './hero';
 import { FileInfo } from './file-info';
+import { FileData } from './file-data';
+
 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -60,8 +62,12 @@ export class HeroService {
     return this.http.post<any>( 'http://localhost:60525/api/search/', fileInfo );
   }
 
-  searchFiles( searchTerm: string ): Observable<string[]> {
-    return this.http.get<string[]>( 'http://localhost:60525/api/file/' + searchTerm );
+  searchFiles( searchTerm: string ): Observable<FileData[]> {
+    return this.http.get<FileData[]>( 'http://localhost:60525/api/file/' + searchTerm );
+  }
+
+  deleteFile( fileData: FileData ): Observable<any> {
+    return this.http.delete<any>( 'http://localhost:60525/api/file/' + fileData.id );
   }
 
 

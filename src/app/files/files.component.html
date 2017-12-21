@@ -8,8 +8,10 @@
 <div>
   <label>Search Results</label>
   <ul class="list-group">
-    <li *ngFor="let file of fileNamesList" class="list-group-item">
-      {{file}}
+    <li class="list-group-item" *ngFor="let file of fileDataList" >
+      <a>{{file.id}}</a>
+      <a href="http://localhost:60525/api/file/download/{{file.id}}">{{file.originalFileName}}</a>
+      <button class="btn btn-secondary" (click)="deleteFile(file)">X</button>
     </li>
   </ul>
 </div>

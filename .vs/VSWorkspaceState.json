@@ -9,8 +9,8 @@
     "\\src\\app\\hero-form",
     "\\src\\app\\hero-search",
     "\\src\\app\\heroes",
-    "\\src\\app\\messages"
+    "\\src\\app\\upload-form"
   ],
-  "SelectedNode": "\\src\\app\\files\\files.component.css",
+  "SelectedNode": "\\src\\app\\files\\files.component.ts",
   "PreviewInSolutionExplorer": false
 }
