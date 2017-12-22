@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -23,25 +25,26 @@ import { AppRoutingModule } from './/app-routing.module';
 
 
 
-@NgModule({
-    declarations: [
-        AppComponent,
-        HeroesComponent,
-        HeroDetailComponent,
-        MessagesComponent,
-        DashboardComponent,
-        HeroFormComponent,
-        HeroSearchComponent,
-        UploadFormComponent,
-        FilesComponent
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule
-    ],
-    providers: [HeroService, MessageService],
-    bootstrap: [AppComponent]
-})
+@NgModule( {
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    HeroFormComponent,
+    HeroSearchComponent,
+    UploadFormComponent,
+    FilesComponent
+  ],
+  imports: [
+    NgbModule.forRoot(),
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [HeroService, MessageService],
+  bootstrap: [AppComponent]
+} )
 export class AppModule { }

@@ -1,36 +1,37 @@
+<h2 style="text-align: center">File Upload</h2>
 <form #uploadForm="ngForm" name="uploadForm" method="post" enctype="multipart/form-data" action="api/upload">
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       File Title:
       <input type="text" class="form-control" id="title" required
              [(ngModel)]="fileInfo.title" name="title" 
              #title="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
     </label>
   </div>
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Uploader Name:
       <input type="text" class="form-control" id="uploaderName" required
              [(ngModel)]="fileInfo.uploaderName" name="uploaderName" 
              #uploaderName="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
     </label>
   </div>
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Description:
       <input type="text" class="form-control" id="description"
              [(ngModel)]="fileInfo.description" name="description"
              #description="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
     </label>
   </div>
-  <div>
-    <input #fileInput type="file" />
+  <div class="form-group">
+    <input #fileInput class="form-control" type="file" />
   </div>
 
 
-  <button (click)="upload()">Upload</button>
+  <button type="button" class="btn btn-success" (click)="upload()">Upload</button>
 </form>
-<!--Let's see if this will be pushed-->
+
 
 
 <app-files></app-files>

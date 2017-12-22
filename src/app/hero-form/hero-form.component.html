@@ -1,29 +1,30 @@
+<h2 style="text-align: center">Hero Form</h2>
 <form name="uploadForm" method="post" enctype="multipart/form-data" action="api/upload">
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Hero Name:
+    </label>
       <input type="text" class="form-control" id="name" required
              [(ngModel)]="hero.name" name="name"
-             #name="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
-    </label>
+             #name="ngModel" onClick="this.setSelectionRange(0, this.value.length)" placeholder="name">
   </div>
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Hero Power:
+    </label>
       <input type="text" class="form-control" id="power" required
              [(ngModel)]="hero.power" name="power" 
-             #power="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
-    </label>
+             #power="ngModel" onClick="this.setSelectionRange(0, this.value.length)"  placeholder="power">
   </div>
-  <div>
-    <label>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Hero Identity:
+    </label>
       <input type="text" class="form-control" id="identity"
              [(ngModel)]="hero.identity" name="identity"
-             #identity="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
-    </label>
+             #identity="ngModel" onClick="this.setSelectionRange(0, this.value.length)"  placeholder="identity">
   </div>
 
 
-  <button (click)="submit()">Submit</button>
+  <button type="button" class="btn btn-success" (click)="submit()">Submit</button>
 </form>

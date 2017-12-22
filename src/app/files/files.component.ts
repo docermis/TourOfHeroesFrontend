@@ -25,6 +25,7 @@ export class FilesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.fileDataList = null;
   }
 
   searchFiles() {
@@ -32,14 +33,14 @@ export class FilesComponent implements OnInit {
       .subscribe( result => {
         this.fileDataList = result;
         if ( this.fileDataList.length ) {
-          this.messageService.add( `Hero Service: Found files with search term: ${this.searchTerm}` );
+          this.messageService.add( `Hero Service: Found ${this.fileDataList.length} file(s) with search term: ${this.searchTerm }` );
         }
         else {
           this.messageService.add( `Hero Service: Did NOT find files with search term: ${this.searchTerm}` );
         }
       },
       error => {
-        this.messageService.add( 'Hero Service: FAILED to find files.' );
+        this.messageService.add( 'Hero Service: FAILED to search files.' );
       } );
   }
 

@@ -1,12 +1,19 @@
-<h1 style="text-align:center">{{title}}</h1>
-<nav>
-  <a routerLink="/">Home</a>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-  <a routerLink="/form">Hero Form</a>
-  <a routerLink="/uploadForm">Upload Form</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
 
+<div class="fixed-top" style="background-color: black ; color: #369">
+  <h1 style="text-align:center">{{title}}</h1>
+  <nav class="navbar navbar-expand-sm">
+    <div class="container btn-group  col-md-4">
+      <button type="button" class="btn btn-primary navbar-btn" routerLink="/">Home</button>
+      <button type="button" class="btn btn-primary navbar-btn" routerLink="/dashboard">Dashboard</button>
+      <button type="button" class="btn btn-primary navbar-btn" routerLink="/heroes">Heroes</button>
+      <button type="button" class="btn btn-primary navbar-btn" routerLink="/form">Hero Form</button>
+      <button type="button" class="btn btn-primary navbar-btn" routerLink="/uploadForm">Upload Form</button>
+    </div>
+  </nav>
+</div>
+<div class="container" style="margin-top: 8em">
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+</div>
 <footer class="footer">Ermis Ioannidis</footer>
+

@@ -1,17 +1,24 @@
-<br />
-<div class="container">
-  <label>Search</label>
+<h2 style="text-align: center">File Search</h2>
+<div class="form-group">
   <input type="search" class="form-control" id="search" required maxlength="80"
-         [(ngModel)]="searchTerm" name="search" />
-  <button class="btn btn-primary" (click)="searchFiles()">Search</button>
+         [(ngModel)]="searchTerm" name="search" #search="ngModel" onClick="this.setSelectionRange(0, this.value.length)" />
+  <div *ngIf="search.invalid && (search.dirty || search.touched)"
+       class="alert alert-danger">
+    <div *ngIf="search.errors.required">
+      Search term is required.
+    </div>
+  </div>
 </div>
-<div>
-  <label>Search Results</label>
+<button class="btn btn-primary" (click)="searchFiles()">Search</button>
+
+<div class="form-group">
+  <label style="font-size: 140%" [hidden]="!(this.fileDataList)">Search Results</label>
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let file of fileDataList" >
-      <a>{{file.id}}</a>
-      <a href="http://localhost:60525/api/file/download/{{file.id}}">{{file.originalFileName}}</a>
-      <button class="btn btn-secondary" (click)="deleteFile(file)">X</button>
+    <li class="list-group-item list-group-item-action" *ngFor="let file of fileDataList">
+      <span class="badge badge-pill badge-primary">{{file.id}}</span>
+      <a class="btn btn-primary" href="http://localhost:60525/api/file/download/{{file.id}}">{{file.originalFileName}}</a>
+      <button class="btn btn-danger" style="float: right" (click)="deleteFile(file)">X</button>
     </li>
   </ul>
 </div>
+

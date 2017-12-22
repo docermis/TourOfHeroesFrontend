@@ -1,10 +1,10 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroList" class="col-1-4" routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
-  </a>
+<h2 style="text-align: center">Top Heroes</h2>
+<div class="container-fluid" style="text-align: center ; margin-bottom:4em">
+  <div>
+    <button type="button" class="btn btn-info" style="margin: 0 2em 0 2em" *ngFor="let hero of heroList" routerLink="/detail/{{hero.id}}">
+      <h3 class="text-white">{{hero.name}}</h3>
+    </button>
+  </div>
 </div>
 
 
