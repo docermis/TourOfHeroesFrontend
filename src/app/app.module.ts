@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
+
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -15,12 +16,19 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { UploadFormComponent } from './upload-form/upload-form.component';
 import { FilesComponent } from './files/files.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+
 
 
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
+import { AuthenticationService } from './authentication.service';
 
 import { AppRoutingModule } from './/app-routing.module';
+import { UserService } from './user.service';
+import { AppConfig } from './app.config';
 
 
 
@@ -35,7 +43,9 @@ import { AppRoutingModule } from './/app-routing.module';
     HeroFormComponent,
     HeroSearchComponent,
     UploadFormComponent,
-    FilesComponent
+    FilesComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -44,7 +54,13 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [HeroService, MessageService],
+  providers: [
+    HeroService,
+    MessageService,
+    AuthenticationService,
+    UserService,
+    AppConfig
+  ],
   bootstrap: [AppComponent]
 } )
 export class AppModule { }

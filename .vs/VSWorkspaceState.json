@@ -3,14 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\dashboard",
-    "\\src\\app\\files",
-    "\\src\\app\\hero-detail",
-    "\\src\\app\\hero-form",
-    "\\src\\app\\hero-search",
-    "\\src\\app\\heroes",
-    "\\src\\app\\upload-form"
+    "\\src\\app\\login",
+    "\\src\\app\\register"
   ],
-  "SelectedNode": "\\src\\app\\file-data.ts",
+  "SelectedNode": "\\src\\environments",
   "PreviewInSolutionExplorer": false
 }
