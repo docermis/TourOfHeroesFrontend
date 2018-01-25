@@ -12,7 +12,7 @@
 <button class="btn btn-primary" (click)="searchFiles()">Search</button>
 
 <div class="form-group">
-  <label style="font-size: 140%" [hidden]="!(this.fileDataList)">Search Results</label>
+  <label style="font-size: 140%" [hidden]="!(fileDataList)">Search Results</label>
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let file of fileDataList">
       <span class="badge badge-pill badge-primary">{{file.id}}</span>

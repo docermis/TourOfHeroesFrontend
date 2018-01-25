@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MessageService } from '../message.service';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../user';
+import { UserCredentials } from '../user-credentials';
 
 
 @Component( {
@@ -12,7 +13,10 @@ import { User } from '../user';
   styleUrls: ['./login.component.css']
 } )
 export class LoginComponent implements OnInit {
-  model: User;
+  model: UserCredentials = {
+    username: "username",
+    password: "password"
+  }
   loading = false;
   returnUrl: string;
 
@@ -32,9 +36,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
-    this.authenticationService.login( this.model.username, this.model.password )
+    this.authenticationService.login( this.model )
       .subscribe( result => {
         this.router.navigate( [this.returnUrl] );
+        this.messageService.add( `Logged in as: ${ JSON.parse( localStorage.getItem( 'currentUser' ) ).username }` );
       },
       error => {
         this.messageService.add( "Failed to login!" );

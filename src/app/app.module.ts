@@ -18,6 +18,7 @@ import { UploadFormComponent } from './upload-form/upload-form.component';
 import { FilesComponent } from './files/files.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -29,6 +30,7 @@ import { AuthenticationService } from './authentication.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserService } from './user.service';
 import { AppConfig } from './app.config';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -45,7 +47,8 @@ import { AppConfig } from './app.config';
     UploadFormComponent,
     FilesComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -59,7 +62,8 @@ import { AppConfig } from './app.config';
     MessageService,
     AuthenticationService,
     UserService,
-    AppConfig
+    AppConfig,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 } )

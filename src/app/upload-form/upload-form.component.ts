@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { FileInfo } from '../file-info';
+import { User } from '../user';
 
 import { MessageService } from '../message.service';
 import { HeroService } from '../hero.service';
+
 
 
 @Component( {
@@ -16,7 +18,16 @@ export class UploadFormComponent {
   @ViewChild( "fileInput" ) fileInput;
   @ViewChild( "uploadForm" ) uploadForm;
 
-  fileInfo = new FileInfo( "", "", "Bob's File", "Bob the Builder", "This is a file uploaded by Bob." );
+  currentUser = JSON.parse( localStorage.getItem( 'currentUser' ) );
+  user: User = {
+    id: this.currentUser.id,
+    firstName: this.currentUser.firstName,
+    lastName: this.currentUser.lastName,
+    username: this.currentUser.username,
+    password: ""
+  }
+
+  fileInfo = new FileInfo( "", "", "My File", this.user, "" );
   success = false;
 
   constructor(

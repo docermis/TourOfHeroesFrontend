@@ -9,18 +9,21 @@ import { UploadFormComponent } from './upload-form/upload-form.component';
 import { FilesComponent } from './files/files.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 
 
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'form', component: HeroFormComponent },
-  { path: 'uploadForm', component: UploadFormComponent },
+  { path: 'heroes', component: HeroesComponent, canActivate: [AuthGuard] },
+  { path: 'detail/:id', component: HeroDetailComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'form', component: HeroFormComponent, canActivate: [AuthGuard] },
+  { path: 'uploadForm', component: UploadFormComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 

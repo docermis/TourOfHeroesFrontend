@@ -12,7 +12,7 @@ import { User } from '../user';
 } )
 
 export class RegisterComponent {
-  model = { id: undefined, firstName: "", lastName: "", username: "", password: "" };
+  model = { id: 0, firstName: "", lastName: "", username: "", password: "" };
   loading = false;
 
   constructor(
@@ -23,6 +23,7 @@ export class RegisterComponent {
 
   register() {
     this.loading = true;
+    //elegxos an uparxei idi to username
     this.userService.create( this.model )
       .subscribe(
       data => {

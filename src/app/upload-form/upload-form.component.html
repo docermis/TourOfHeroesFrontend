@@ -3,25 +3,32 @@
   <div class="form-group">
     <label class="font-weight-bold">
       File Title:
-      <input type="text" class="form-control" id="title" required
-             [(ngModel)]="fileInfo.title" name="title" 
+      <input type="text" class="form-control font-weight-normal" id="title" required
+             [(ngModel)]="fileInfo.title" name="title"
              #title="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
     </label>
   </div>
   <div class="form-group">
     <label class="font-weight-bold">
+      Uploader Username:
+      <!--<input type="text" class="form-control" id="uploaderInfo" required
+         [(ngModel)]="fileInfo.uploaderInfo.username" name="uploaderInfo"
+         #uploaderInfo="ngModel" onClick="this.setSelectionRange(0, this.value.length)">-->
+      <a style="width: 202px" class="font-weight-normal">{{fileInfo.uploaderInfo.username}}</a>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">
       Uploader Name:
-      <input type="text" class="form-control" id="uploaderName" required
-             [(ngModel)]="fileInfo.uploaderName" name="uploaderName" 
-             #uploaderName="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+      <a style="width: 202px" class="font-weight-normal">{{fileInfo.uploaderInfo.firstName}} {{fileInfo.uploaderInfo.lastName}}</a>
     </label>
   </div>
   <div class="form-group">
     <label class="font-weight-bold">
       Description:
-      <input type="text" class="form-control" id="description"
+      <input type="text" class="form-control font-weight-normal" id="description"
              [(ngModel)]="fileInfo.description" name="description"
-             #description="ngModel" onClick="this.setSelectionRange(0, this.value.length)">
+             #description="ngModel" onClick="this.setSelectionRange(0, this.value.length)" placeholder="description">
     </label>
   </div>
   <div class="form-group">

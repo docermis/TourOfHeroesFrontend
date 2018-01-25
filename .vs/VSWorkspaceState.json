@@ -3,9 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\login",
-    "\\src\\app\\register"
+    "\\src\\app\\hero-search"
   ],
-  "SelectedNode": "\\src\\environments",
+  "SelectedNode": "\\src\\app\\hero.service.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -42,6 +42,11 @@ export class HeroFormComponent {
       },
       error => this.messageService.add( 'Hero Service: FAILED to find hero.' )
       );
+
+  }
+
+  goBack(): void {
+    this.heroService.goBack();
   }
   
 }

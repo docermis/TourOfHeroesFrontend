@@ -1,0 +1,16 @@
+<!--Show List of Users in Database-->
+<div *ngIf="currentUser">
+  <h3 style="text-align: center">Welcome {{currentUser.firstName}}!</h3>
+  <h2 style="text-align: center">Registered Users:</h2>
+  <ul class="form-group">
+    <li class="list-group-item list-group-item-action" style="font-size: 150%" *ngFor="let user of userList">
+      <span class="badge badge-pill badge-primary">{{user.id}}</span>  {{user.firstName}} {{user.lastName}}
+      <button type="button" class="btn btn-danger" style="float: right" (click)="deleteUser(user)">X</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!currentUser">
+  <h3 style="text-align: center">Welcome Guest!</h3>
+  <h5 style="text-align: center ; color: #096c82">Please log in to access users, heroes, files and more.</h5>
+</div>

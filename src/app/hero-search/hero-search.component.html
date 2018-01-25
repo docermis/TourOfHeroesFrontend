@@ -7,7 +7,21 @@
   <ul class="list-group">
     <li class="list-group-item list-group-item-action text-success font-weight-bold" style="font-size: 150%"
         *ngFor="let hero of heroes$ | async" routerLink="/detail/{{hero.id}}">
-        <span class="badge badge-dark badge-pill">{{hero.id}}</span><a style="margin-left: 1em">{{hero.name}}</a>
+      <span class="badge badge-dark badge-pill">{{hero.id}}</span><a style="margin-left: 1em">{{hero.name}}</a>
     </li>
   </ul>
 </div>
+
+<!--<div class="form-group">
+  <h4>User Search</h4>
+
+  <input class="form-control" #searchBox2 id="search-box2" (keyup)="search2(searchBox2.value)" />
+</div>
+<div class="form-group">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action text-success font-weight-bold" style="font-size: 150%"
+        *ngFor="let user of users$ | async" routerLink="/detail/{{user.id}}">
+      <span class="badge badge-dark badge-pill">{{user.id}}</span><a style="margin-left: 1em">{{user.firstName}} {{user.lastName}}</a>
+    </li>
+  </ul>
+</div>-->

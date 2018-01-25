@@ -19,13 +19,19 @@ export class UserService {
   ) { }
 
   getAll() {
-    return this.http.get( this.config.apiUrl + '/users', this.jwt() ).map( ( response: Response ) => response.json() );
+    return this.http.get( this.config.apiUrl + '/users', this.jwt() )
+      .map( ( response: any ) => response );
   }
 
-  getById( id: string ) {
-    return this.http.get( this.config.apiUrl + '/users/' + id, this.jwt() ).map( ( response: Response ) => response.json() );
+  getUserById( id: number ) {
+    return this.http.get( this.config.apiUrl + '/users/' + id, this.jwt() )
+      .map( ( response: any ) => response );
   }
 
+  getUserByName( term: string ): Observable<User[]> {
+    return this.http.get<User[]>( this.config.apiUrl + '/users/search/' + term, this.jwt() )
+      .map( ( response: any ) => response );
+  }
   create( user: User ) {
     return this.http.post( this.config.apiUrl + '/users/register', user, this.jwt() );
   }
@@ -34,7 +40,7 @@ export class UserService {
     return this.http.put( this.config.apiUrl + '/users/' + user.id, user, this.jwt() );
   }
 
-  delete( id: string ) {
+  delete( id: number ) {
     return this.http.delete( this.config.apiUrl + '/users/' + id, this.jwt() );
   }
 
@@ -45,7 +51,7 @@ export class UserService {
     let currentUser = JSON.parse( localStorage.getItem( 'currentUser' ) );
     if ( currentUser && currentUser.token ) {
       let headers = new HttpHeaders( { 'Authorization': 'Bearer ' + currentUser.token } );
-      return { headers: headers } ;
+      return { headers: headers };
     }
   }
 }
