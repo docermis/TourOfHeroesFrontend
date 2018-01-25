@@ -3,7 +3,7 @@
   <h3 style="text-align: center">Welcome {{currentUser.firstName}}!</h3>
   <h2 style="text-align: center">Registered Users:</h2>
   <ul class="form-group">
-    <li class="list-group-item list-group-item-action" style="font-size: 150%" *ngFor="let user of userList">
+    <li class="list-group-item list-group-item-action" style="font-size: 150%" *ngFor="let user of userList" routerLink="/user-detail/{{user.id}}">
       <span class="badge badge-pill badge-primary">{{user.id}}</span>  {{user.firstName}} {{user.lastName}}
       <button type="button" class="btn btn-danger" style="float: right" (click)="deleteUser(user)">X</button>
     </li>

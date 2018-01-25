@@ -1,0 +1,30 @@
+<h2 style="text-align: center">User Details</h2>
+<div class="container" *ngIf="user">
+  <div class="form-group">
+    <label class="font-weight-bold">Id:</label>
+    <a class="badge badge-light display-1" style="font-size: 150%">{{user.id}}</a>
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">
+      First Name:
+    </label>
+    <input type="text" class="form-control" [(ngModel)]="user.firstName" placeholder="firstName">
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">
+      Last Name:
+    </label>
+    <input type="text" class="form-control" [(ngModel)]="user.lastName" placeholder="lastName">
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">
+      Username:
+    </label>
+    <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="username ">
+  </div>
+
+
+  <button type="button" class="btn btn-success" (click)="save()">Save</button>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+
+</div>

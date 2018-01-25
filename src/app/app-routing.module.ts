@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'heroes', component: HeroesComponent, canActivate: [AuthGuard] },
+  { path: 'user-detail/:id', component: UserDetailComponent, canActivate: [AuthGuard] }
   { path: 'detail/:id', component: HeroDetailComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'form', component: HeroFormComponent, canActivate: [AuthGuard] },

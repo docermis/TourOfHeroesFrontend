@@ -31,6 +31,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserService } from './user.service';
 import { AppConfig } from './app.config';
 import { AuthGuard } from './auth.guard';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 
 
@@ -48,7 +49,8 @@ import { AuthGuard } from './auth.guard';
     FilesComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    UserDetailComponent
   ],
   imports: [
     NgbModule.forRoot(),

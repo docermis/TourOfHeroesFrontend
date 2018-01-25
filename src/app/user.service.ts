@@ -11,10 +11,14 @@ import { FileData } from './file-data';
 import { AppConfig } from './app.config';
 import { User } from './user';
 
+import { Location } from '@angular/common';
+
+
 @Injectable()
 export class UserService {
   constructor(
     private http: HttpClient,
+    private location: Location,
     private config: AppConfig
   ) { }
 
@@ -44,6 +48,9 @@ export class UserService {
     return this.http.delete( this.config.apiUrl + '/users/' + id, this.jwt() );
   }
 
+  goBack(): void {
+    this.location.back();
+  }
   // private helper methods
 
   private jwt() {
